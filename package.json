@@ -1,11 +1,23 @@
 {
-	"scripts": {
-		"t": "playwright test",
-		"test": "DEBUG=pw:browser* PLAYWRIGHT_BROWSERS_PATH=browsers playwright test"
 
-
-	},
-	"devDependencies": {
-		"@playwright/test": "^1.21.1"
-	}
+  "name": "fe-automated-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": "true",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "PLAYWRIGHT_BROWSERS_PATH=browsers playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.sftcwl.com/sftc-fe/fe-automated-testing.git"
+  },
+  "author": "zhaorui",
+  "license": "ISC",
+  "description": "前端自动化测试"
 }
