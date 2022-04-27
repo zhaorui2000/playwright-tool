@@ -1,0 +1,11 @@
+{
+	"scripts": {
+		"t": "playwright test",
+		"test": "DEBUG=pw:browser* PLAYWRIGHT_BROWSERS_PATH=browsers playwright test"
+
+
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.21.1"
+	}
+}
