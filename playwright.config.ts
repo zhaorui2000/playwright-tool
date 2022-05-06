@@ -2,7 +2,7 @@ import {PlaywrightTestConfig} from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
   timeout: 5 * 60 * 1000,
-  reporter: [['html', {open: 'never', outputFolder: "/home/sftcwl/test_AUTO_TBLHFE_PRE"}]],
+  reporter: [['html', {open: 'never', outputFolder: "/home/sftcwl/odp_ohs8139/webroot/fe"}]],
   use: {
     locale: "zh-CN",
     actionTimeout: 10 * 1000,
