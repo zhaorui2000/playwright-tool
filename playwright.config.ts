@@ -1,7 +1,6 @@
 import { PlaywrightTestConfig } from "@playwright/test";
 const config: PlaywrightTestConfig = {
-  timeout: 5 * 60 * 1000,
-  reporter:"html",
+  timeout: 1 * 60 * 1000,
   use: {
     locale: "zh-CN",
     actionTimeout: 10 * 1000,
