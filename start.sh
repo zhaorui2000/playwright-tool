@@ -41,5 +41,5 @@ transformTags $tags
 echo $tags
 # --- DONE 处理参数
 # --- 运行测试
-PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test ${project} -g ${tags}
+PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test tests/${project} -g ${tags}
 # --- DONE 运行测试
