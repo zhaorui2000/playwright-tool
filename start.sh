@@ -22,5 +22,5 @@ while [ $# -gt 0 ]; do
 done
 # --- DONE 获取参数
 # --- 运行测试
-PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test $args
+PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test -g ${project}
 # --- DONE 运行测试

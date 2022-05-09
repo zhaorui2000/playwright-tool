@@ -1,4 +1,4 @@
-import { test, expect, chromium } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 test.beforeAll(async () => {
   console.log(`测试开始${"".padEnd(80, "-")}`);
@@ -15,6 +15,9 @@ test.describe("playwright测试", () => {
     expect(false).toBeTruthy();
   });
   test("肯定会成功", () => {
+    expect(true).toBeTruthy();
+  });
+  test("【sc-oms】", () => {
     expect(true).toBeTruthy();
   });
 });
