@@ -22,24 +22,17 @@ done
 # --- DONE 获取命令行参数
 # --- 处理参数
 transformTags() {
-  OLD_IFS="$IFS"
-  IFS=" "
-  array=($*)
-  IFS="$OLD_IFS"
-  str=""
-  for ((i = 0; i < ${#array[@]}; i++)); do
-    if (($i == 0)); then
-      str=${array[0]}
-    else
-      str=$str"|"${array[$i]}
-    fi
-  done
-  tags=$str
-  return 0
+  str=$*
+  # -g 后面的的参数 自动帮忙加 -g
+  if [ -z "$str" ]; then
+    tags=""
+  else
+    tags=" -g "${str/ /|}
+  fi
 }
 transformTags $tags
 echo $tags
 # --- DONE 处理参数
 # --- 运行测试
-PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test tests/${project} -g ${tags}
+PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test tests/${project} ${tags}
 # --- DONE 运行测试
