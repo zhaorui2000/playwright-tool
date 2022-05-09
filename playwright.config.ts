@@ -5,9 +5,7 @@ const config: PlaywrightTestConfig = {
   reporter: [['html', {open: 'never', outputFolder: `/home/sftcwl/odp_ohs8139/webroot/fe/${process.env.JENKINS_ID}`, }]],
   use: {
     locale: "zh-CN",
-    trace: "on",
     screenshot: "on",
-    video: "on",
   },
 };
 export default config;
