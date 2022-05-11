@@ -1,14 +1,21 @@
 import {expect, Locator, Page} from "@playwright/test";
 
+export interface NormalPageConfig {
+
+}
+
 class NormalPage {
   page: Page;
   
-  constructor(page) {
+  constructor(page, config: NormalPageConfig = {}) {
     this.page = page;
   }
   
+  /**
+   * 导航到当前页面之前的操作
+   */
   async navigate() {
-    // 导航到当前页面操作
+
   }
   
   /**
