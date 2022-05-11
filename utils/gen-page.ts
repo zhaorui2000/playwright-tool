@@ -7,6 +7,7 @@ interface GenPagesOptions {
 }
 
 async function genPage(browser: Browser, options: GenPagesOptions = {}) {
+  console.log(process.env)
   const {cookie, cookieOption} = options;
   const context = await browser.newContext();
   // 转换并且设置cookie
