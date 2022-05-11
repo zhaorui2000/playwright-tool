@@ -1,27 +1,17 @@
-import { test, expect } from '@playwright/test';
+import {expect, test} from '@playwright/test';
+import genPage from "../../utils/gen-page";
+import GoodsCategoryManage from "./modules/GoodsCategoryManage";
 
-test.use({
-  storageState: 'tests/sc-oms/storage.json'
-});
 
-test('test', async ({ page }) => {
+test('test', async ({browser}) => {
   
-  // Go to http://10.189.72.85:8501/
-  await page.goto('http://10.189.72.85:8501/');
-  
-  // Go to http://10.189.72.85:8501/base/homePage
-  await page.goto('http://10.189.72.85:8501/base/homePage');
-  
-  // Click div[role="menuitem"]:has-text("基础数据")
-  await page.locator('div[role="menuitem"]:has-text("基础数据")').click();
-  
-  // Click span:has-text("商品数据") >> nth=0
-  await page.locator('span:has-text("商品数据")').first().click();
-  
-  // Click a:has-text("商品分类")
-  await page.locator('a:has-text("商品分类")').click();
-  await expect(page).toHaveURL('http://10.189.72.85:8501/feOms/CommonDataManage/GoodsData/GoodsCategoryManage');
-  
+  const page = await genPage(browser, {
+    cookie: 'sfCustomerId=50; orgId=2053; sensitive=true; tblh-platform=LTA-SSC-BOX|ODY3; customerCode=50; language=zh-CN; Accept-Language=zh-CN; STOKEN=N8QAABlKEpsEhcQfituCm3bd6YGWjomCZHo_w5xTwAAiNIn2OysWAwAAWFEjzjRBI7CHMUZDetFpCPMwAitKMcluO1G0osChmYvwAAcbnmHeHjAABWGQAAb-cdL1BMAA',
+    cookieOption: {domain: "10.189.72.85"}
+  });
+  const goodsCategoryManage = new GoodsCategoryManage(page)
+  await goodsCategoryManage.navigate()
+  await page.locator('button:has-text("新建")').waitFor({state:"attached"})
   // Click button:has-text("新建")
   await page.locator('button:has-text("新建")').click();
   await expect(page.locator('text=所属一级分类')).toBeHidden()

@@ -1,10 +1,16 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@playwright/test': ^1.21.1
+  '@types/js-cookie': ^3.0.2
+  js-cookie: ^3.0.1
+
+dependencies:
+  js-cookie: 3.0.1
 
 devDependencies:
   '@playwright/test': 1.21.1
+  '@types/js-cookie': 3.0.2
 
 packages:
 
@@ -222,6 +228,8 @@ packages:
     resolution: {integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/plugin-proposal-class-properties/7.16.7_@babel+core@7.16.12:
@@ -590,6 +598,10 @@ packages:
     resolution: {integrity: sha1-kVP+mLuivVZaY63ZQ21vDX+EaP8=}
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
+    dev: true
+
+  /@types/js-cookie/3.0.2:
+    resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==}
     dev: true
 
   /@types/node/17.0.29:
@@ -1021,6 +1033,11 @@ packages:
   /jpeg-js/0.4.3:
     resolution: {integrity: sha1-YVjgnxmDrXc4E3BL6AaAVQ7/l3s=}
     dev: true
+
+  /js-cookie/3.0.1:
+    resolution: {integrity: sha1-njm0xsL1ZWNwjX0x9vXyGHOpJBQ=}
+    engines: {node: '>=12'}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
