@@ -35,5 +35,5 @@ transformTags $tags
 echo $tags
 # --- DONE 处理参数
 # --- 运行测试
-PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id JENKINS_COOKIE=$cookie npx playwright test tests/${project} ${tags}
+PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id JENKINS_COOKIE=$cookie npx playwright test tests/${project} ${tags} --config=playwright.jenkins.config.ts
 # --- DONE 运行测试

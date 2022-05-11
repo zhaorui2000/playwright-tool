@@ -5,3 +5,4 @@ node_modules/
 
 # playwright 生成的文件
 playwright-report/
+test-results/

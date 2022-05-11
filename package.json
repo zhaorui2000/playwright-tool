@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test --config=playwright.config.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.21.1",
