@@ -7,12 +7,14 @@ interface GenPagesOptions {
 }
 
 async function genPage(browser: Browser, options: GenPagesOptions = {}) {
-  console.log(process.env)
-  const {cookie, cookieOption} = options;
+  const {cookie = process.env.JENKINS_COOKIE, cookieOption} = options;
   const context = await browser.newContext();
   // 转换并且设置cookie
-  if (cookie !== undefined) {
-    await context.addCookies(parseCookies(cookie, cookieOption))
+  console.group("--- cookie ---")
+  console.log(cookie)
+  console.groupEnd()
+  if (typeof cookie === "string" && cookie.trim().length !== 0) {
+    await context.addCookies(parseCookies(cookie.trim(), cookieOption))
   }
   return await context.newPage();
 }

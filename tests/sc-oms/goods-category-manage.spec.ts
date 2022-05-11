@@ -6,7 +6,6 @@ import GoodsCategoryManage from "./modules/GoodsCategoryManage";
 test('test', async ({browser}) => {
   
   const page = await genPage(browser, {
-    cookie: 'sfCustomerId=50; orgId=2053; sensitive=true; tblh-platform=LTA-SSC-BOX|ODY3; customerCode=50; language=zh-CN; Accept-Language=zh-CN; STOKEN=N8QAABlKEpsEhcQfituCm3bd6YGWjomCZHo_w5xTwAAiNIn2OysWAwAAWFEjzjRBI7CHMUZDetFpCPMwAitKMcluO1G0osChmYvwAAcbnmHeHjAABWGQAAb-cdL1BMAA',
     cookieOption: {domain: "10.189.72.85"}
   });
   const goodsCategoryManage = new GoodsCategoryManage(page)

@@ -8,6 +8,7 @@ npm install
 # --- jenkins中参数
 project=${project} #项目名称
 tags=${tags}       #自定义标签
+cookie=${cookie}   #cookie
 # --- DONE jenkins中参数
 # --- 获取命令行参数
 while [ $# -gt 0 ]; do
@@ -34,5 +35,5 @@ transformTags $tags
 echo $tags
 # --- DONE 处理参数
 # --- 运行测试
-PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id npx playwright test tests/${project} ${tags}
+PLAYWRIGHT_BROWSERS_PATH=browsers JENKINS_ID=$id JENKINS_COOKIE=$cookie npx playwright test tests/${project} ${tags}
 # --- DONE 运行测试
