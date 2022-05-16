@@ -16,22 +16,22 @@ class GoodsCategoryManage extends NormalPage{
   async testAddModelDom(){
     // Click button:has-text("新建")
     await this.page.locator('button:has-text("新建")').click();
-    await expect(this.page.locator('text=所属一级分类')).toBeHidden()
+    await this.isNotInDom(this.page.locator('text=所属一级分类'));
   
     // Click .scoms-col.scoms-col-20 .scoms-form-item-control-input .scoms-form-item-control-input-content .scoms-select .scoms-select-selector
     await this.page.locator('.scoms-col.scoms-col-20 .scoms-form-item-control-input .scoms-form-item-control-input-content .scoms-select .scoms-select-selector').click();
   
     // Click text=二级分类
     await this.page.locator('text=二级分类').click();
-    await expect(this.page.locator('text=所属一级分类')).toBeVisible()
+    await this.isInDom(this.page.locator('text=所属一级分类'));
   
     // Click button:has-text("取 消")
     await this.page.locator('button:has-text("取 消")').click();
   
     // Click button:has-text("新建")
     await this.page.locator('button:has-text("新建")').click();
-    
-    await this.isMatchSnapshot({waitDom:this.page.locator('text=创建')})
+  
+    await this.isNotInDom(this.page.locator('text=所属一级分类'))
   
     // Click button:has-text("取 消")
     await this.page.locator('button:has-text("取 消")').click();
