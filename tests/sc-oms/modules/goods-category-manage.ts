@@ -12,6 +12,7 @@ class GoodsCategoryManage extends NormalPage{
     await this.page.locator('span:has-text("商品数据")').first().click();
     await this.page.locator('a:has-text("商品分类")').click();
     await expect(this.page).toHaveURL('/feOms/CommonDataManage/GoodsData/GoodsCategoryManage');
+    await this.page.reload()
   }
   async testAddModelDom(){
     // Click button:has-text("新建")

@@ -8,7 +8,7 @@ test.use({
 })
 test('test', async ({browser}) => {
   const page = await genPage(browser, {
-    cookieOption: {domain: baseURL}
+    cookieOption: {domain: "10.189.72.85"}
   });
   const goodsCategoryManage = new GoodsCategoryManage(page)
   await goodsCategoryManage.navigate()
