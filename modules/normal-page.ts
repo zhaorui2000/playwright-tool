@@ -13,10 +13,27 @@ class NormalPage {
   }
   
   /**
+   * 初始化方法，需要手动调一下
+   */
+  async init() {
+    // 加载一个新页面或者新ifream触发 可以取到document
+    this.page.on("load", async () => {
+      await this.page.addScriptTag({path: "script/add-observer.js"})
+    })
+  }
+  
+  /**
    * 导航到当前页面之前的操作
    */
   async navigate() {
+  }
   
+  /**
+   * 基于 add-observer.js 脚本。
+   * 等待 document.body 内容没有变化
+   */
+  async waitDomNoChange() {
+    await this.page.locator("#isReady").waitFor({state: "attached"})
   }
   
   /**
@@ -24,7 +41,7 @@ class NormalPage {
    * @param locator
    * @param options
    */
-  async isInDom(locator: Locator, options?: { timeout: number }) {
+  async isInDom(locator: Locator, options?: { timeout?: number }) {
     const {timeout} = options ?? {};
     await locator?.waitFor({state: "visible", timeout: timeout ?? 5000});
     await expect(locator).toBeVisible()
@@ -35,7 +52,8 @@ class NormalPage {
    * @param locator
    * @param options
    */
-  async isNotInDom(locator: Locator, options?: { waitDom: Locator, sleepTime: number }) {
+  async isNotInDom(locator: Locator, options?: { waitDom?: Locator, sleepTime?: number }) {
+    console.log(this.page.mainFrame())
     const {waitDom, sleepTime} = options ?? {};
     if (typeof sleepTime === "number" && !Number.isNaN(sleepTime)) {
       await sleep(sleepTime);
@@ -43,7 +61,7 @@ class NormalPage {
     if (waitDom !== undefined) {
       await waitDom?.waitFor({state: "visible"});
     }
-    await expect(locator).not.toBeVisible()
+    await expect(locator).toBeHidden()
   }
   
   
