@@ -36,7 +36,7 @@ class NormalPage {
    * @param options
    */
   async isNotInDom(locator: Locator, options?: { waitDom: Locator, sleepTime: number }) {
-    const {waitDom, sleepTime} = options;
+    const {waitDom, sleepTime} = options ?? {};
     if (typeof sleepTime === "number" && !Number.isNaN(sleepTime)) {
       await sleep(sleepTime);
     }
@@ -51,8 +51,8 @@ class NormalPage {
    * 快照测试
    * {waitDom} 等待某个元素出现在页面中再截图
    */
-  async isMatchSnapshot(options: { waitDom?: Locator } = {}) {
-    const {waitDom} = options;
+  async isMatchSnapshot(options?: { waitDom?: Locator }) {
+    const {waitDom} = options ?? {};
     await waitDom?.waitFor({state: "visible"});
     await expect(await this.page.screenshot({fullPage: true, animations: "disabled"})).toMatchSnapshot();
   }
