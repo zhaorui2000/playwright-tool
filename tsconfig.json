@@ -1,8 +1,12 @@
 {
+  "files": ["global.d.ts"],
+  "include": ["global.d.ts"],
   "compilerOptions": {
+    "allowJs": true,
     "jsx": "react",
     "types": [
-      "@types/jest"
+      "@types/jest",
+      "jest-extended"
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true

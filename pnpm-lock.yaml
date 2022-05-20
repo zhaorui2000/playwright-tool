@@ -5,6 +5,7 @@ specifiers:
   '@types/react': ^18.0.9
   '@types/react-test-renderer': ^18.0.0
   jest: ^28.1.0
+  jest-extended: ^2.0.0
   prettier: 2.6.2
   react: ^18.1.0
   react-test-renderer: ^18.1.0
@@ -20,6 +21,7 @@ devDependencies:
   '@types/react': 18.0.9
   '@types/react-test-renderer': 18.0.0
   jest: 28.1.0
+  jest-extended: 2.0.0_jest@28.1.0
   prettier: 2.6.2
   ts-jest: 28.0.2_qy5m32hwmbz5mebulkdtchzcz4
   typescript: 4.6.4
@@ -1517,6 +1519,17 @@ packages:
       '@types/node': 17.0.34
       jest-mock: 28.1.0
       jest-util: 28.1.0
+    dev: true
+
+  /jest-extended/2.0.0_jest@28.1.0:
+    resolution: {integrity: sha512-6AgjJQVaBEKGSK3FH90kOiRUWJsbzn9NWtW0pjGkAFIdH0oPilfkV/gHPJdVvJeBiqT3jMHw8TUg9pUGC1azDg==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    peerDependencies:
+      jest: '>=27.2.5'
+    dependencies:
+      jest: 28.1.0
+      jest-diff: 27.5.1
+      jest-get-type: 27.5.1
     dev: true
 
   /jest-get-type/27.5.1:
