@@ -2,10 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/jest': ^27.5.1
+  '@types/mockjs': ^1.0.6
   '@types/react': ^18.0.9
   '@types/react-test-renderer': ^18.0.0
   jest: ^28.1.0
   jest-extended: ^2.0.0
+  mockjs: ^1.1.0
   prettier: 2.6.2
   react: ^18.1.0
   react-test-renderer: ^18.1.0
@@ -13,11 +15,13 @@ specifiers:
   typescript: ^4.6.4
 
 dependencies:
+  mockjs: 1.1.0
   react: 18.1.0
   react-test-renderer: 18.1.0_react@18.1.0
 
 devDependencies:
   '@types/jest': 27.5.1
+  '@types/mockjs': 1.0.6
   '@types/react': 18.0.9
   '@types/react-test-renderer': 18.0.0
   jest: 28.1.0
@@ -694,6 +698,10 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
+  /@types/mockjs/1.0.6:
+    resolution: {integrity: sha512-Yu5YlqbYZyqsd6LjO4e8ONJDN9pTSnciHDcRP4teNOh/au2b8helFhgRx+3w8xsTFEnwr9jtfTVJbAx+eYmlHA==}
+    dev: true
+
   /@types/node/17.0.34:
     resolution: {integrity: sha512-XImEz7XwTvDBtzlTnm8YvMqGW/ErMWBsKZ+hMTvnDIjGCKxwK5Xpc+c/oQjOauwq8M4OS11hEkpjX8rrI/eEgA==}
     dev: true
@@ -988,6 +996,11 @@ packages:
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
+
+  /commander/9.2.0:
+    resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
@@ -1915,6 +1928,13 @@ packages:
     dependencies:
       brace-expansion: 1.1.11
     dev: true
+
+  /mockjs/1.1.0:
+    resolution: {integrity: sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ==}
+    hasBin: true
+    dependencies:
+      commander: 9.2.0
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
